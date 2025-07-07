@@ -12,5 +12,7 @@ This project was developed to strengthen my understanding of core programming co
 - 🗑️ Delete tasks by index with confirmation
 - 🛡️ Error handling for invalid input
 - 👶 Written in pure Python, ideal for learning and growth
+- 💾 Tasks are saved to a local `tasks.txt` file and automatically reloaded on startup.
+
 
 
