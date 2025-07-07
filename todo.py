@@ -3,9 +3,24 @@
 tasks = [] #list that will contain all the tasks
 
 
+def load_tasks(): #loads all the tasks from a saved file
+        try:
+            with open('tasks.txt', 'r') as tasks_file:
+                for task in tasks_file:
+                    tasks.append(task.strip())
+        except FileNotFoundError:
+            pass
+
+def save_tasks(): #saves all the tasks to a file
+    with open('tasks.txt','w') as tasks_file:
+        for task in tasks:
+            tasks_file.write(task + '\n')
+
+
 def add_task(): #will add tasks to the list
     task = input("Enter a task: ").strip()
     tasks.append(task)
+    save_tasks()
     print("Task added!")
 
 def view_tasks(): #will display all the tasks in the list
@@ -33,7 +48,7 @@ def delete_task(): #will delete task from list
                 print("Cancelled.")
 
 def main(): #main function
-
+    load_tasks()
     while True:
         print("\n****** TO-DO Application ******")
         print("1. View tasks")
